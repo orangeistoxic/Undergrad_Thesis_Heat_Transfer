@@ -27,12 +27,12 @@ void Theorical_TrunError_50(){
 
 void  Numerical_TrunError_50(){
     const int deltaX=50;
-    Matrix<float,deltaX+1,1> TrunError,NumericalSol,SecondODE;
-    Matrix<float,deltaX+1,deltaX+1> CoeMatrix;
+    Matrix<float,deltaX+1,1> TrunError,NumericalSol,SecondODE;   //deltaX=50,所以會有51個節點
+    Matrix<float,deltaX+1,deltaX+1> CoeMatrix; //同上,51*51的矩陣
     
 
-    CoeMatrix.setZero();
-    for(int i=0;i<=deltaX;i++){
+    CoeMatrix.setZero();  
+    for(int i=0;i<=deltaX;i++){    //設定係數
         if(i==0){
             CoeMatrix(i,i)=1;
         }
@@ -47,14 +47,14 @@ void  Numerical_TrunError_50(){
     }
     
 
-    for(int i=0;i<=deltaX;i++){
+    for(int i=0;i<=deltaX;i++){  //計算原函數
         float XPosi=(float)i/deltaX;
         SecondODE(i,0)=exp(XPosi);
     }
 
-    NumericalSol=CoeMatrix.colPivHouseholderQr().solve(SecondODE);
-
-    TrunError=NumericalSol-SecondODE;
+    NumericalSol=CoeMatrix.colPivHouseholderQr().solve(SecondODE); //Eigen預設的解線性矩陣公式,不過有些解題函式似乎有BUG的樣子?
+                                                                   //目前已知是A.colPivHouseholderQr()會是對的
+    TrunError=NumericalSol-SecondODE;  //相減得Trumcation Error
     
     
     cout<<"|||||||||||||||||||||Numerical_TrunError||||||||||||||||||||||||||||||"<<endl;
