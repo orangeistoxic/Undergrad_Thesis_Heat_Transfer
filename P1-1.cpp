@@ -1,9 +1,9 @@
 #define EIGEN_STACK_ALLOCATION_LIMIT 0 //跑deltaX=200的會太大 所以要加這條
 
-#include<iostream>
+#include<bits/stdc++.h> 
 #include<math.h>
 #include<Eigen/Eigen> //要另外裝
-#include<bits/stdc++.h> 
+
 
 
 
