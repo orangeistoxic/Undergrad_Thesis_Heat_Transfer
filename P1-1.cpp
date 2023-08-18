@@ -3,6 +3,7 @@
 #include<iostream>
 #include<math.h>
 #include<Eigen/Eigen> //要另外裝
+#include<bits/stdc++.h> 
 
 
 
@@ -171,8 +172,8 @@ void  Numerical_TrunError_200(){
 int main(){
 
 
-    Theorical_TrunError_200(); 
-    Numerical_TrunError_200();
+    Theorical_TrunError_50(); 
+    Numerical_TrunError_50();
     
     
 }
