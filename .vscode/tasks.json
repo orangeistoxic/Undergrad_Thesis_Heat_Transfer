@@ -3,66 +3,6 @@
 	"tasks": [
 		{
 			"type": "cppbuild",
-			"label": "C/C++: cpp.exe 建置使用中檔案",
-			"command": "C:\\msys64\\mingw64\\bin\\cpp.exe",
-			"args": [
-				"-fdiagnostics-color=always",
-				"-g",
-				"${file}",
-				"-o",
-				"${fileDirname}\\${fileBasenameNoExtension}.exe"
-			],
-			"options": {
-				"cwd": "${fileDirname}"
-			},
-			"problemMatcher": [
-				"$gcc"
-			],
-			"group": "build",
-			"detail": "編譯器: C:\\msys64\\mingw64\\bin\\cpp.exe"
-		},
-		{
-			"type": "cppbuild",
-			"label": "C/C++: g++.exe 建置使用中檔案",
-			"command": "C:\\msys64\\mingw64\\bin\\g++.exe",
-			"args": [
-				"-fdiagnostics-color=always",
-				"-g",
-				"${file}",
-				"-o",
-				"${fileDirname}\\${fileBasenameNoExtension}.exe"
-			],
-			"options": {
-				"cwd": "${fileDirname}"
-			},
-			"problemMatcher": [
-				"$gcc"
-			],
-			"group": "build",
-			"detail": "編譯器: C:\\msys64\\mingw64\\bin\\g++.exe"
-		},
-		{
-			"type": "cppbuild",
-			"label": "C/C++: cpp.exe 建置使用中檔案",
-			"command": "C:\\msys64\\mingw64\\bin\\cpp.exe",
-			"args": [
-				"-fdiagnostics-color=always",
-				"-g",
-				"${file}",
-				"-o",
-				"${fileDirname}\\${fileBasenameNoExtension}.exe"
-			],
-			"options": {
-				"cwd": "${fileDirname}"
-			},
-			"problemMatcher": [
-				"$gcc"
-			],
-			"group": "build",
-			"detail": "編譯器: C:\\msys64\\mingw64\\bin\\cpp.exe"
-		},
-		{
-			"type": "cppbuild",
 			"label": "C/C++: g++.exe 建置使用中檔案",
 			"command": "C:\\msys64\\mingw64\\bin\\g++.exe",
 			"args": [
@@ -73,6 +13,7 @@
 				"${fileDirname}\\${fileBasenameNoExtension}.exe",
 				"-I",
 				"D:/eigen-3.4.0"
+
 			],
 			"options": {
 				"cwd": "${fileDirname}"

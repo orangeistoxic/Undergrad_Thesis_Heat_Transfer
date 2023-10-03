@@ -1,7 +1,5 @@
 {
     "files.associations": {
-        "iostream": "cpp",
-        "cmath": "cpp"
-    },
-    "C_Cpp.intelliSenseEngineFallback": "enabled"
+        "ostream": "cpp"
+    }
 }
