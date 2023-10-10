@@ -1,4 +1,4 @@
-#define EIGEN_STACK_ALLOCATION_LIMIT 0 
+#define EIGEN_STACK_ALLOCATION_LIMIT  0
 #include<bits/stdc++.h> 
 #include<math.h>
 #include<Eigen/Eigen> 
@@ -7,9 +7,10 @@
 using namespace std;
 using namespace Eigen;
 
+
 void  Numerical_Solution_Abt(){
 
-    const int deltaX=200;
+    const int deltaX=300;              //deltaX的大小請於此處更改
     Matrix<double,deltaX+1,1> NumSol;
     Matrix<long double,deltaX+1,1> SolErr;
     Matrix<double,deltaX-1,1> SecondODE,sNumSol,BC;
