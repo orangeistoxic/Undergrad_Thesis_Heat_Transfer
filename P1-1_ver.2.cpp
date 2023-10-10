@@ -7,6 +7,8 @@
 using namespace std;
 using namespace Eigen;
 
+//使用和公式同樣的結構 計算的matrix中頭尾(Boundary Condition)改為額外扣掉的方式計算  結構大致如下 CoeMatrix*NumSol-(B.C.)=SecondODE 
+
 
 void  Numerical_Solution_Abt(){
 
@@ -68,7 +70,7 @@ void  Numerical_Solution_Abt(){
         norm_SolErr+=SolErr(i,0)*SolErr(i,0);
     }
     norm_SolErr=sqrt(norm_SolErr);
-    cout<<SolErr<<endl;
+    cout<<NumSol<<endl;
     cout<<"||||||||||||"<<endl;
     cout<<norm_SolErr<<endl;
 
