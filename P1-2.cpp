@@ -8,7 +8,7 @@
 using namespace std;
 using namespace Eigen;
 
-//使用和Pi-1_ver.2同樣的結構  CoeMatrix*NumSol-(B.C.)=SecondODE 
+//使用和P1-i_ver.2同樣的結構  CoeMatrix*NumSol-(B.C.)=SecondODE 
 
 void Numerical_Solution_Abt(){
     const int deltaX=300;              //deltaX的大小請於此處更改
