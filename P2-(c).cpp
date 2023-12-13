@@ -8,7 +8,7 @@
 
 using namespace std;
 using namespace Eigen;
-
+                                              //雖然檔案是寫P2-(c).cpp，但是其實這題是在寫D小題，然後這個檔案格子無法畫太小(矩陣會爆炸)，所以沒有很好用
 void NormSolErr(){
     const int ReDeltaX=50;
     double DeltaX=(double)1/ReDeltaX;
