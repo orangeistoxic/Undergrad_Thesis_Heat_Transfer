@@ -10,9 +10,9 @@ using namespace std;
 using namespace Eigen;
 
 void NormSolErr(){
-    const int ReDeltaX=5;
+    const int ReDeltaX=50;
     double DeltaX=(double)1/ReDeltaX;
-    const int ReDeltaT=250;
+    const int ReDeltaT=5000;
     double DeltaT=(double)1/ReDeltaT;
 
     Matrix<double,ReDeltaX+1,ReDeltaT+1> NumSol,ExSol,SolErr;
