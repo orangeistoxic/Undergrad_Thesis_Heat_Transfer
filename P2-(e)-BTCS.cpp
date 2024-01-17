@@ -9,10 +9,11 @@ using namespace std;
 using namespace Eigen;
 
 void NormSolErr_BTCS(){
-    const int ReDeltaX=5;        //DeltaX的倒數 變更格子大小請在此更動
+    const int ReDeltaX=100;        //DeltaX的倒數 變更格子大小請在此更動
     double DeltaX=(double)1/ReDeltaX;
-    const int ReDeltaT=25;    //DeltaT的倒數 變更格子大小請在此更動
+    const int ReDeltaT=100000;    //DeltaT的倒數 變更格子大小請在此更動
     double DeltaT=(double)1/ReDeltaT;
+    double MaxNorm=0;
 
     Matrix<double,ReDeltaX-1,1>NumSol_Old,NumSol_New,ExSol,SolErr,Boundary_Condition;
     NumSol_Old.setZero();
@@ -54,6 +55,12 @@ void NormSolErr_BTCS(){
 
         for(int i=0;i<=ReDeltaX-2;i++){
             SolErr(i,0)=abs(ExSol(i,0)-NumSol_New(i,0));
+
+            if(SolErr(i,0)>MaxNorm)
+            {
+                MaxNorm=SolErr(i,0);
+            }
+
             normSolErr+=pow(SolErr(i,0),2);
         }
 
@@ -62,8 +69,9 @@ void NormSolErr_BTCS(){
 
     }
 
-    normSolErr=sqrt(normSolErr);
-    cout<<normSolErr;
+    normSolErr=sqrt(normSolErr/((ReDeltaX+1)*(ReDeltaT+1)));
+    cout<<"2 Norm: "<<normSolErr<<endl;
+    cout<<"Max Norm: "<<MaxNorm<<endl;
 }
 
 

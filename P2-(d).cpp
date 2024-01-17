@@ -13,6 +13,7 @@ void NormSolErr(){
     double DeltaX=(double)1/ReDeltaX;
     const int ReDeltaT=2500000;    //DeltaT的倒數 變更格子大小請在此更動
     double DeltaT=(double)1/ReDeltaT;
+    double MaxNorm=0;
 
     Matrix<double,ReDeltaX+1,1>NumSol_Old,NumSol_New,ExSol,SolErr;
     NumSol_Old.setZero();
@@ -41,6 +42,10 @@ void NormSolErr(){
 
         for(int i=0;i<=ReDeltaX;i++){                     //累加所有的Solution Error
             SolErr(i,0)=abs(ExSol(i,0)-NumSol_New(i,0));
+            if(SolErr(i,0)>MaxNorm)
+            {
+                MaxNorm=SolErr(i,0);
+            }
             normSolErr+=pow(SolErr(i,0),2);
         }
 
@@ -49,9 +54,10 @@ void NormSolErr(){
         }
     }
 
-    normSolErr=sqrt(normSolErr);                        //算出Norm
+    normSolErr=sqrt(normSolErr/((ReDeltaX+1)*(ReDeltaT+1)));                        //算出Norm
 
-    cout<<normSolErr<<endl;
+    cout<<"2 Norm: "<<normSolErr<<endl;
+    cout<<"Max Norm: "<<MaxNorm<<endl;
 
 }
 
