@@ -9,9 +9,9 @@ using namespace std;
 using namespace Eigen;
 
 void NormSolErr_CN(){
-    const int ReDeltaX=10;        //DeltaX的倒數 變更格子大小請在此更動
+    const int ReDeltaX=100;        //DeltaX的倒數 變更格子大小請在此更動
     double DeltaX=(double)1/ReDeltaX;
-    const int ReDeltaT=100;    //DeltaT的倒數 變更格子大小請在此更動
+    const int ReDeltaT=100000;    //DeltaT的倒數 變更格子大小請在此更動
     double DeltaT=(double)1/ReDeltaT;
 
     double MaxNorm=0;         
